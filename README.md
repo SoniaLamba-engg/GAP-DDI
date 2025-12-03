@@ -22,14 +22,14 @@ Precomputed drug–drug similarity matrix.
 Precomputed disease–disease similarity matrix.
 
 **2. data_processed/ – Embedding-Based Feature Data**
-This directory contains the processed features generated after the embedding stage. For each dataset (C, F, Main), the folder includes:
+This directory contains the processed features generated after the embedding stage and cosine similarity computation. For each dataset (C, F, Main), the folder includes:
 
-**drug_features.npy / disease_features.npy**
-Embedding vectors learned from the heterogeneous graph.
-**drug_similarity_cosine.csv / disease_similarity_cosine.csv**
-Cosine similarity matrices computed from the learned embeddings.
-**feature_set_for_prediction.csv**
-Final feature vectors used for optimization and prediction (e.g., PPXA, classifier input, ranking).
+**DiDrA.txt**
+Known binary drug–disease associations.
+**DrugSim.txt**
+Cosine drug–drug similarity matrix.
+**DiseaseSim.txt**
+Cosine disease–disease similarity matrix.
 
 **Implementation**
 The GAP-DDI framework is executed in two main stages:
