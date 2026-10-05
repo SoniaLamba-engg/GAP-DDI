@@ -7,6 +7,8 @@ This repository has been created to hold the source code for the following paper
 GAP-DDI is a graph-based framework for predicting novel drug–disease associations to support drug repurposing. It integrates a Graph Convolutional Network (GCN) with an attention mechanism and Parallel Proximal Optimization (PPXA) to learn from sparse, multi-relational biomedical data.
 By combining multi-source similarities and known interactions, GAP-DDI captures both local and global patterns, achieving superior predictive performance and uncovering clinically relevant drug indications validated by CTD.
 
+## Repository: **https://github.com/SoniaLamba-engg/GAP-DDI**
+
 ## Environment
 - MATLAB R2024a 
 - Python 3.6.8. The required packages are as follows:
