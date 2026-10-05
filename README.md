@@ -56,6 +56,42 @@ This directory contains the processed features generated after the embedding sta
 ## Reproducing the main results
 Random seed: **42** (`rng(42)` at the top of `<script>`); folds are stratified over positive associations.
 
-## Usage
-Feature learning: python main.py
-Optimization and prediction: main2.m
+## Reproducing the Main Results
+
+The experiments corresponding to the submitted manuscript can be reproduced using the code at the following version:
+
+**Step 1: Feature Learning**
+
+Navigate to the directory containing the Python implementation and run:
+
+-python main.py
+
+This step performs the feature-learning stage, including heterogeneous graph construction, attention-guided GCN embedding generation, and cosine-similarity computation.
+
+**Step 2: Optimization and Prediction**
+
+Open MATLAB R2024a, set the repository root as the working directory, and run:
+
+-main2.m
+
+This step performs PPXA-based optimization with graph-Laplacian regularization and generates the predicted drug–disease association scores.
+
+**Reproducibility Settings**
+
+The main experiments use a fixed random seed of 42. In MATLAB, the random number generator is initialized using:
+
+rng(42);
+
+The evaluation uses stratified folds over positive drug–disease associations. Missing/unknown drug–disease pairs are treated as negatives, and no additional negative sampling is performed.
+
+**The hyperparameters used for the manuscript experiments are fixed as follows:**
+
+GCN embedding dimension: B = 64
+Number of GCN layers: L = 3
+Layer attention: α_l = 1/(l+1)
+Heterogeneous graph parameter: μ = 6
+Nearest-neighbour sparsification: p = 5
+PPXA parameter: θ = 5
+PPXA iterations: 20
+Prediction range: X ∈ [0,1]
+Evaluation: 10-fold cross-validation
