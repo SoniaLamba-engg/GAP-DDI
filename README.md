@@ -39,7 +39,7 @@ This directory contains the processed features generated after the embedding sta
 ## Pre-processing
 1. Similarity normalisation for drugs and diseases.
 2. Heterogeneous adjacency construction (Eq. 1 and 3 of the paper), μ = 6.
-3. GCN encoder: B = 64, L = 3, layer attention α_l = 1/(l+1).
+3. Layer attention a_l: trainable, initialized as 1/(l+1)
 4. Cosine similarity of embeddings, then p = 5 nearest-neighbour sparsification and normalised graph Laplacians.
 5. Missing/unknown pairs are treated as negatives; no extra negative sampling.
 
